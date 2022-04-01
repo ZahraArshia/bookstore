@@ -5,21 +5,26 @@ import NavBar from './components/NavBar';
 import Books from './components/Books';
 import Categories from './components/Categories';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const books = [
+  {
+    id: 1,
+    genre: 'genre',
+    title: 'book title',
+    author: 'author',
+    status: 'complete',
+    currentChapter: 'Current chapter',
+    chapterNumber: 'Chapter #number',
+  },
+];
 
-  render() {
-    return (
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/Categories" element={<Categories />} />
-        </Routes>
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <div>
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Books books={books} />} />
+        <Route exact path="/categories" element={<Categories />} />
+      </Routes>
+    </div>
+  );
 }

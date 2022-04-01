@@ -1,12 +1,13 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 
-export default function Book() {
+export default function Book({ book }) {
   return (
     <div className="bookCard">
       <div className="bookInfo">
-        <p className="genre">genre</p>
-        <p className="title">title</p>
-        <p className="author">author</p>
+        <p className="genre">{book.genre}</p>
+        <p className="title">{book.title}</p>
+        <p className="author">{book.author}</p>
         <ul>
           <li><button type="button">Comments</button></li>
           <li><button type="button">Remove</button></li>
@@ -19,12 +20,16 @@ export default function Book() {
           <p>percentage</p>
         </div>
         <div>
-          <p>status</p>
-          <p>CURRENT CHAPTER</p>
-          <p>Chapter number</p>
+          <p>{book.status}</p>
+          <p>{book.currentChapter}</p>
+          <p>{book.chapterNumber}</p>
           <button type="button">Update progress</button>
         </div>
       </div>
     </div>
   );
 }
+
+Book.propTypes = {
+  book: Proptypes.objectOf(Proptypes.string).isRequired,
+};
