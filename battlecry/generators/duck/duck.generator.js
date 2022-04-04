@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import { Generator, File, namedCasex, casex, log } from 'battlecry';
 
 const CONFIG_FILE = 'configureStore.js';
