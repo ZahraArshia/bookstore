@@ -1,5 +1,4 @@
 import React from 'react';
-// import Proptypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Book from './Book';
 import AddBook from './AddBook';
@@ -15,7 +14,3 @@ export default function Books() {
     </>
   );
 }
-
-// Books.propTypes = {
-//   books: Proptypes.arrayOf(Proptypes.shape({})).isRequired,
-// };

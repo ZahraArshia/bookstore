@@ -5,18 +5,6 @@ import NavBar from './components/NavBar';
 import Books from './components/Books';
 import Categories from './components/Categories';
 
-// const books = [
-//   {
-//     id: 1,
-//     genre: 'genre',
-//     title: 'book title',
-//     author: 'author',
-//     status: 'complete',
-//     currentChapter: 'Current chapter',
-//     chapterNumber: 'Chapter #number',
-//   },
-// ];
-
 export default function App() {
   return (
     <div>
