@@ -3,7 +3,16 @@ const ADD = 'add';
 const DEL = 'del';
 
 // Empty array of books
-const initialState = [];
+const initialState = [{
+  id: 1,
+  genre: 'genre',
+  title: 'book title',
+  author: 'author',
+  status: 'complete',
+  currentChapter: 'Current chapter',
+  chapterNumber: 'Chapter #number',
+},
+];
 
 // Reducer
 export default function booksReducer(state = initialState, action = {}) {
