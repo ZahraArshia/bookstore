@@ -4,7 +4,7 @@ const API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 // Actions
 const ADD = 'add';
 const DEL = 'del';
-const PAGE_LOAD = 'loadBooks';
+const UPDATE = 'getBooks';
 
 // Empty array of books
 const initialState = [];
@@ -18,7 +18,7 @@ export default function booksReducer(state = initialState, action = {}) {
       }];
     case DEL:
       return [...state.filter((book) => book.id !== action.payLoad.id)];
-    case PAGE_LOAD:
+    case UPDATE:
       return [
         ...action.payload,
       ];
@@ -38,7 +38,7 @@ export const getBooks = () => (dispatch) => fetch(`${API}/books`,
       ...book,
     };
   });
-  dispatch({ type: PAGE_LOAD, payload: books });
+  dispatch({ type: UPDATE, payload: books });
 }).catch(() => {});
 
 export const add = (book) => (dispatch) => fetch(
@@ -75,20 +75,3 @@ export const del = (bookId) => (dispatch) => {
     }
   }).catch(() => {});
 };
-
-// Action Creators
-// export function add(book) {
-//   return {
-//     type: ADD,
-//     payload: book,
-//   };
-// }
-
-// export function del(id) {
-//   return {
-//     type: DEL,
-//     payLoad: {
-//       id,
-//     },
-//   };
-// }
