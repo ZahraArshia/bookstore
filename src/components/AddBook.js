@@ -24,7 +24,7 @@ export default function AddBook() {
   }
 
   return (
-    <>
+    <div className="addForm">
       <h3>ADD NEW BOOK</h3>
       <form onSubmit={submitBookToStore}>
         <input type="text" placeholder="Book Title" value={title} onChange={(event) => setTitle(event.target.value)} required />
@@ -44,6 +44,6 @@ export default function AddBook() {
         </select>
         <button type="submit">Add Book</button>
       </form>
-    </>
+    </div>
   );
 }
