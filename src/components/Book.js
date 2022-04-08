@@ -40,7 +40,7 @@ export default function Book({ book }) {
             <p className="status">Completed</p>
           </div>
         </div>
-        <div>
+        <div className="rightSection">
           <p className="status">currentChapter</p>
           <p>chapterNumber</p>
           <button className="bookButton" type="button">Update progress</button>
